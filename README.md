@@ -1,5 +1,5 @@
 # Chatbot
-This code defines a Flask web application that serves as a chatbot, utilizing OpenAI's GPT-3.5-turbo model to provide answers to agricultural questions. Additionally, it incorporates text-to-speech (TTS) functionality to convert responses into audio files.
+It is a Flask web application that serves as a chatbot, utilizing OpenAI's GPT-3.5-turbo model to provide answers to agricultural questions. Additionally, it incorporates text-to-speech (TTS) functionality to convert responses into audio files.
 Install All The Required Libraries <br>
     `pip install - r requirements.txt`
 -  Add Your OpenAI And HuggingFace Api Keys <br>
