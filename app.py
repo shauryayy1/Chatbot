@@ -13,10 +13,8 @@ import random
 
 #load the api keys from the the .env file
 load_dotenv()
-#
 hugging_face = os.getenv('hugging_face')
 open_ai_key = os.getenv('open_ai_key')
-#
 openai.api_key = open_ai_key
 
 app = Flask(__name__)
@@ -74,9 +72,6 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 def process_audio(filepath):
-    # Placeholder function for processing audio (speech-to-text transcription)
-    # Replace this with your own implementation using libraries like SpeechRecognition or DeepSpeech
-    #return 'hello This is a placeholder transcription for audio'
     API_URL = "https://api-inference.huggingface.co/models/jonatasgrosman/wav2vec2-large-xlsr-53-english"
     headers = {"Authorization": hugging_face}
     with open(filepath, "rb") as f:
@@ -87,11 +82,8 @@ def process_audio(filepath):
     
 
 def process_text(text):
-    # Placeholder function for processing user's text input
-    # Replace this with your own implementation
+
     return_text = get_anwer_openai(text)
-    #asyncio.run(text_to_audio(return_text))
-    # generating random strings
     res = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k=8))
     text_to_audio(return_text,res)
